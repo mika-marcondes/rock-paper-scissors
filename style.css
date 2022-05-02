@@ -5,6 +5,8 @@ html {
 body {
     height: 100%;
 
+    overflow: hidden;
+
     background-color: hsl(237, 49%, 15%);
     background-image: radial-gradient(at top, hsl(214, 47%, 23%) 10%, hsl(237, 49%, 15%) 100%);
     background-repeat: no-repeat;
@@ -12,3 +14,73 @@ body {
 
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
+
+header {
+    display: flex;
+
+    margin: 2rem;
+
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0;
+
+    font-weight: 700;
+    line-height: 1.75rem;
+    color: white;
+}
+
+.flex {
+    display: flex;
+}
+
+.text-align {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.border {
+    justify-content: space-between;
+
+    padding: 1rem;
+
+    height: auto;
+    width: 500px;
+
+    border: 1px white solid;
+    border-radius: 0.7rem;
+    background-color: transparent;
+}
+
+.score {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    height: 6rem;
+    width: 7.5rem;
+
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.score p {
+    margin: 0;
+
+    font-weight: 600;
+    color: hsl(229, 64%, 46%);
+}
+
+.score h1 {
+    margin: 0.5rem;
+
+    font-size: 3rem;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
+
+
+
+
+
