@@ -3,9 +3,13 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+
     height: 100%;
 
-    overflow: hidden;
+    margin: 0;
+    /*overflow: hidden;*/
 
     background-color: hsl(237, 49%, 15%);
     background-image: radial-gradient(at top, hsl(214, 47%, 23%) 10%, hsl(237, 49%, 15%) 100%);
@@ -35,13 +39,14 @@ header h1 {
     display: flex;
 }
 
-.text-align {
-    flex-direction: column;
+.logo {
+    align-content: center;
     justify-content: center;
 }
 
 .border {
     justify-content: space-between;
+    align-content: center;
 
     padding: 1rem;
 
@@ -54,6 +59,8 @@ header h1 {
 }
 
 .score {
+    cursor: default;
+
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -80,7 +87,52 @@ header h1 {
     color: hsl(229, 25%, 31%);
 }
 
+.rules {
+    justify-content: right;
+}
 
+.circle-base {
+    height: 120px;
+    width: 120px;
 
+    border-radius: 50%;
+}
 
+.rock {
+    border-bottom: solid #9f1733 .4rem;
 
+    background-color: #da2e4e;
+    background-image: linear-gradient(hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+}
+
+.paper {
+    border-bottom: solid #2742bf .4rem;
+
+    background-color: hsl(230, 89%, 65%);
+    background-image: linear-gradient(hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+}
+
+.scissors {
+    border-bottom: solid #c66d1d .4rem;
+
+    background-color: hsl(40, 84%, 53%);
+    background-image: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+}
+
+.lizard {
+    border-bottom: solid #5f37aa .4rem;
+
+    background-color: hsl(261, 72%, 63%);
+    background-image: linear-gradient(hsl(261, 72%, 63%), hsl(261, 73%, 60%));
+}
+
+.spock {
+    border-bottom: solid #2c8fac .4rem;
+
+    background-color: hsl(189, 58%, 57%);
+    background-image: linear-gradient(hsl(189, 58%, 57%), hsl(189, 59%, 53%));
+}
+
+.hide {
+    display: none;
+}
