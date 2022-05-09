@@ -3,14 +3,13 @@ html {
 }
 
 body {
-    display: flex;
     flex-direction: column;
 
     height: 100%;
 
     margin: 0;
     box-sizing: border-box;
-    /*overflow: hidden;*/
+    overflow: hidden;
 
     background-color: hsl(237, 49%, 15%);
     background-image: radial-gradient(at top, hsl(214, 47%, 23%) 10%, hsl(237, 49%, 15%) 100%);
@@ -94,7 +93,6 @@ header h1 {
 
 .circle-base {
     display: flex;
-    flex-direction: column;
 
     justify-content: center;
 
@@ -102,7 +100,6 @@ header h1 {
     width: 120px;
 
     border-radius: 50%;
-
 }
 
 .rock {
@@ -161,4 +158,34 @@ header h1 {
 
 .white-base svg {
     align-self: center;
+}
+
+.paper-scissors {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.rock-paper-scissors {
+    position: absolute;
+}
+
+.rock-position {
+    justify-content: center;
+}
+
+section {
+    display: flex;
+
+    align-content: center;
+    justify-content: center;
+}
+
+.triangle {
+    height: 340px;
+    width: 304px;
+
+    background-image: url("images/bg-triangle.svg");
+    background-repeat: no-repeat;
 }
