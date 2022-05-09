@@ -93,11 +93,12 @@ header h1 {
 
 .circle-base {
     display: flex;
+    margin: 1rem 2rem;
 
     justify-content: center;
 
-    height: 120px;
-    width: 120px;
+    height: 10rem;
+    width: 10rem;
 
     border-radius: 50%;
 }
@@ -144,8 +145,8 @@ header h1 {
 .white-base {
     display: flex;
 
-    height: 90px;
-    width: 90px;
+    height: 7.5rem;
+    width: 7.5rem;
 
     align-self: center;
     justify-content: center;
@@ -183,9 +184,12 @@ section {
 }
 
 .triangle {
-    height: 340px;
-    width: 304px;
+    margin-top: 5rem;
+
+    height: 300px;
+    width: 300px;
 
     background-image: url("images/bg-triangle.svg");
     background-repeat: no-repeat;
 }
+
