@@ -9,6 +9,7 @@ body {
     height: 100%;
 
     margin: 0;
+    box-sizing: border-box;
     /*overflow: hidden;*/
 
     background-color: hsl(237, 49%, 15%);
@@ -92,10 +93,16 @@ header h1 {
 }
 
 .circle-base {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
     height: 120px;
     width: 120px;
 
     border-radius: 50%;
+
 }
 
 .rock {
@@ -135,4 +142,23 @@ header h1 {
 
 .hide {
     display: none;
+}
+
+.white-base {
+    display: flex;
+
+    height: 90px;
+    width: 90px;
+
+    align-self: center;
+    justify-content: center;
+
+    border-top: solid #c4c4c4 .4rem;
+    border-radius: 50%;
+
+    background-color: white;
+}
+
+.white-base svg {
+    align-self: center;
 }
