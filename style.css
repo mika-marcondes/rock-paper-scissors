@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    display: flex;
     flex-direction: column;
 
     height: 100vh;
@@ -22,32 +23,22 @@ body {
 header {
     display: flex;
 
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     padding-top: 2rem;
 
     justify-content: center;
 }
 
 header h1 {
-    margin: 0;
-
-    font-weight: 700;
     line-height: 1.75rem;
-    color: white;
 }
 
 .flex {
     display: flex;
 }
 
-.logo {
-    align-content: center;
-    justify-content: center;
-}
-
 .border {
     justify-content: space-between;
-    align-content: center;
 
     padding: 1rem;
 
@@ -139,6 +130,17 @@ header h1 {
     display: none;
 }
 
+.normal-game {
+    display: flex;
+
+    align-content: center;
+    justify-content: center;
+}
+
+.game-index {
+    z-index: 10;
+}
+
 .white-base {
     display: flex;
 
@@ -161,29 +163,16 @@ header h1 {
 .paper-scissors {
     display: flex;
     flex-direction: row;
-
-    justify-content: center;
-}
-
-.rock-paper-scissors {
-    align-self: center;
-    position: absolute;
 }
 
 .rock-position {
     justify-content: center;
 }
 
-section {
-    display: flex;
-
-    height: 50vh;
-
-    align-content: center;
-    justify-content: center;
-}
-
 .triangle {
+    position: absolute;
+    z-index: 5;
+
     margin-top: 5rem;
 
     align-self: center;
@@ -194,3 +183,22 @@ section {
     background-image: url("images/bg-triangle.svg");
     background-repeat: no-repeat;
 }
+
+.rules-button {
+    position: fixed;
+
+    align-self: flex-end;
+    justify-self: baseline;
+
+    padding: .5rem 0;
+    margin: 92vh 2rem 0 0;
+
+    width: 100px;
+
+    border: white solid 1px;
+    border-radius: 4px;
+
+    color: white;
+    background-color: transparent;
+}
+
