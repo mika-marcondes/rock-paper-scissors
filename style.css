@@ -202,3 +202,55 @@ header h1 {
     background-color: transparent;
 }
 
+.darken-bg {
+    position: fixed;
+    z-index: 15;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: hsla(0, 0%, 0%, 50%);
+}
+
+.normal-rules {
+    justify-content: center;
+    align-content: center;
+}
+
+.rules-bg {
+    flex-direction: column;
+    position: fixed;
+
+    z-index: 20;
+
+    margin-top: 15vh;
+
+    width: auto;
+    height: auto;
+
+    border-radius: .5rem;
+    background-color: white;
+}
+
+.modal-rules {
+    align-self: center;
+
+    width: 304px;
+    height: 270px;
+
+    margin: 1rem 2rem 2rem 2rem;
+
+    background-image: url("/images/image-rules.svg");
+    background-repeat: no-repeat;
+}
+
+.rules-align {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+}
+
+.exit-button {
+    border: 0;
+    background-color: transparent;
+}
