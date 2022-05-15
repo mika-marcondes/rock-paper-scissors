@@ -39,6 +39,7 @@ header h1 {
 
 .border {
     justify-content: space-between;
+    align-items: center;
 
     padding: 1rem;
 
@@ -253,4 +254,54 @@ header h1 {
 .exit-button {
     border: 0;
     background-color: transparent;
+}
+
+/*Mobile Settings*/
+@media (max-width: 600px) {
+    header {
+        padding: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    header svg {
+        width: 96px;
+        height: 56px;
+    }
+
+    .score {
+        width: 5.5rem;
+        height: 5rem;
+    }
+
+    .border {
+        padding: .6rem;
+    }
+
+    .circle-base {
+        margin: .5rem 1rem;
+        height: 7.5rem;
+        width: 7.5rem;
+    }
+
+    .white-base {
+        height: 5.8rem;
+        width: 5.8rem;
+    }
+
+    .triangle {
+        width: 200px;
+        height: 200px;
+
+        margin-top: 2rem;
+
+        background-image: url("images/bg-triangle.svg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rules-button {
+        align-self: center;
+        margin-right: 0;
+        margin-top: 88vh;
+    }
 }
