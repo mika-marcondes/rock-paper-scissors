@@ -1,41 +1,41 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 
-  background-color: #242424;
+    background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 #game-area {
-  border: 1px solid white;
-  display: flex;
-  flex-flow: row wrap;
-  align-self: center;
-  justify-content: center;
-  width: 320px;
-  height: 20rem;
+    border: 1px solid white;
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+    justify-content: center;
+    width: 320px;
+    height: 20rem;
 }
 
 button {
-  align-self: center;
-  height: 110px;
-  width: 110px;
-  background-repeat: no-repeat;
-  background-size: contain;
+    align-self: center;
+    height: 110px;
+    width: 110px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
