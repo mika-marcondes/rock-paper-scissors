@@ -4,12 +4,12 @@ const paper = document.getElementById('paper') as HTMLButtonElement
 const scissor = document.getElementById('scissor') as HTMLButtonElement
 const rock = document.getElementById('rock') as HTMLButtonElement
 
-paper.onclick = () => selectMove(1)
-scissor.onclick = () => selectMove(2)
-rock.onclick = () => selectMove(3)
+paper.onclick = () => selectMove(0)
+scissor.onclick = () => selectMove(1)
+rock.onclick = () => selectMove(2)
 
 const selectMove = (playerMove: number) => {
-  const setSelection = (userMove: HTMLButtonElement,
+  const hideUnselectedMoves = (userMove: HTMLButtonElement,
                         remove1: HTMLButtonElement,
                         remove2: HTMLButtonElement,
   ) => {
@@ -20,24 +20,32 @@ const selectMove = (playerMove: number) => {
   };
   
   switch (playerMove) {
+    case 0:
+      hideUnselectedMoves(paper, rock, scissor)
+      return
     case 1:
-      setSelection(paper, rock, scissor)
+      hideUnselectedMoves(scissor, paper, rock)
       return
     case 2:
-      setSelection(scissor, paper, rock)
-      return
-    case 3:
-      setSelection(rock, paper, scissor)
+      hideUnselectedMoves(rock, paper, scissor)
       return
   }
 };
 
-function houseMove() {
-  const button = document.createElement('button')
-  const gameArea: HTMLElement | null = document.getElementById('game-area')
+const houseMove = () => {
+  let availableMoves: Array<number>
   
-  button.innerHTML = 'butao'
-  gameArea?.appendChild(button)
+  availableMoves = Array(0, 1, 2)
+  let move = availableMoves[availableMoves.length * Math.random() | 0]
   
-  console.log('oie')
-}
+  const createHousePick = () => {
+    const button = document.createElement('button')
+    const gameArea: HTMLElement | null = document.getElementById('game-area')
+    button.innerHTML = 'butao'
+    
+    gameArea?.appendChild(button)
+  }
+
+  console.log(move)
+  createHousePick()
+};
