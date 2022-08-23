@@ -1,14 +1,14 @@
 import './style.css'
 
-const paper: any = document.getElementById('paper')
-const scissor: any = document.getElementById('scissor')
-const rock: any = document.getElementById('rock')
+const paper: HTMLElement | null = document.getElementById('paper')
+const scissor: HTMLElement | null = document.getElementById('scissor')
+const rock: HTMLElement | null = document.getElementById('rock')
 
-paper.addEventListener("click", function () {selectMove(paper)})
-scissor.addEventListener("click", function () {selectMove(scissor)})
-rock.addEventListener("click", function () {selectMove(rock)})
+paper?.addEventListener("click", function () {selectMove(1)})
+scissor?.addEventListener("click", function () {selectMove(2)})
+rock?.addEventListener("click", function () {selectMove(3)})
 
-function selectMove(move: HTMLElement) {
-  console.log(move)
+function selectMove(playerMove: number) {
+  console.log(playerMove)
 }
 
