@@ -14,24 +14,25 @@ rock?.addEventListener("click", function () {
   selectMove(3)
 })
 
+
 function selectMove(this: any, playerMove: number) {
   switch (playerMove) {
     case 1:
-      paper?.removeEventListener("click", this)
-      scissor?.remove()
-      rock?.remove()
+      setSelection(paper, rock, scissor)
       return
     case 2:
-      scissor?.removeEventListener("click", this)
-      paper?.remove()
-      rock?.remove()
+      setSelection(scissor, paper, rock)
       return
     case 3:
-      rock?.removeEventListener("click", this)
-      scissor?.remove()
-      paper?.remove()
+      setSelection(rock, paper, scissor)
       return
   }
-  console.log(playerMove)
 }
 
+function setSelection(this: any, userMove: HTMLElement | null,
+                      remove1: HTMLElement | null,
+                      remove2: HTMLElement | null) {
+  userMove?.removeEventListener("click", this)
+  remove1?.remove()
+  remove2?.remove()
+}
