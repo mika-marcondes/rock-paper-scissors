@@ -1,21 +1,24 @@
 import './style.css'
 
-const paper: HTMLElement | null = document.getElementById('paper')
-const scissor: HTMLElement | null = document.getElementById('scissor')
-const rock: HTMLElement | null = document.getElementById('rock')
+const paper = document.getElementById('paper') as HTMLButtonElement
+const scissor = document.getElementById('scissor') as HTMLButtonElement
+const rock = document.getElementById('rock') as HTMLButtonElement
 
-paper?.addEventListener("click", function () {
-  selectMove(1)
-})
-scissor?.addEventListener("click", function () {
-  selectMove(2)
-})
-rock?.addEventListener("click", function () {
-  selectMove(3)
-})
+paper.onclick = () => selectMove(1)
+scissor.onclick = () => selectMove(2)
+rock.onclick = () => selectMove(3)
 
-
-function selectMove(this: any, playerMove: number) {
+const selectMove = (playerMove: number) => {
+  const setSelection = (userMove: HTMLButtonElement,
+                        remove1: HTMLButtonElement,
+                        remove2: HTMLButtonElement,
+  ) => {
+    userMove.onclick = null
+    remove1.remove()
+    remove2.remove()
+    houseMove()
+  };
+  
   switch (playerMove) {
     case 1:
       setSelection(paper, rock, scissor)
@@ -27,12 +30,14 @@ function selectMove(this: any, playerMove: number) {
       setSelection(rock, paper, scissor)
       return
   }
-}
+};
 
-function setSelection(this: any, userMove: HTMLElement | null,
-                      remove1: HTMLElement | null,
-                      remove2: HTMLElement | null) {
-  userMove?.removeEventListener("click", this)
-  remove1?.remove()
-  remove2?.remove()
+function houseMove() {
+  const button = document.createElement('button')
+  const gameArea: HTMLElement | null = document.getElementById('game-area')
+  
+  button.innerHTML = 'butao'
+  gameArea?.appendChild(button)
+  
+  console.log('oie')
 }
