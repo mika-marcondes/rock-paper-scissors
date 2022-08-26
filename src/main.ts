@@ -4,30 +4,30 @@ const paper = document.getElementById('paper') as HTMLButtonElement
 const scissor = document.getElementById('scissor') as HTMLButtonElement
 const rock = document.getElementById('rock') as HTMLButtonElement
 
-paper.onclick = () => playerMove(0)
-scissor.onclick = () => playerMove(1)
-rock.onclick = () => playerMove(2)
+paper.onclick = () => selectMove(0)
+scissor.onclick = () => selectMove(1)
+rock.onclick = () => selectMove(2)
 
-const playerMove = (move: number) => {
-  const createPlayerPick = (userMove: HTMLButtonElement,
-                            remove1: HTMLButtonElement,
-                            remove2: HTMLButtonElement,
+const selectMove = (move: number) => {
+  const createPickScreen = (userMove: HTMLButtonElement,
+                            hideMove1: HTMLButtonElement,
+                            hideMove2: HTMLButtonElement,
   ) => {
     userMove.onclick = null
-    remove1.remove()
-    remove2.remove()
+    hideMove1.remove()
+    hideMove2.remove()
     houseMove()
   };
   
   switch (move) {
     case 0:
-      createPlayerPick(paper, rock, scissor)
+      createPickScreen(paper, rock, scissor)
       return
     case 1:
-      createPlayerPick(scissor, paper, rock)
+      createPickScreen(scissor, paper, rock)
       return
     case 2:
-      createPlayerPick(rock, paper, scissor)
+      createPickScreen(rock, paper, scissor)
       return
   }
 };
