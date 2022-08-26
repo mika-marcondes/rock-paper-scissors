@@ -15,9 +15,9 @@
 
 body {
     margin: 0;
-    box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
     min-width: 320px;
     min-height: 100vh;
 }
@@ -32,10 +32,34 @@ body {
     height: 20rem;
 }
 
-button {
+#game-area button {
     align-self: center;
     height: 110px;
     width: 110px;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+}
+
+header img {
+    width: 6rem;
+    height: auto;
+}
+
+#score {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+#score h6, p {
+    margin: 0;
 }
