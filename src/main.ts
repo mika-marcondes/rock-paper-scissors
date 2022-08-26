@@ -1,7 +1,5 @@
 import './style.css'
 
-const availableMoves = Array(0, 1, 2)
-
 const paper = document.getElementById('paper') as HTMLButtonElement
 const scissor = document.getElementById('scissor') as HTMLButtonElement
 const rock = document.getElementById('rock') as HTMLButtonElement
@@ -34,17 +32,18 @@ const playerMove = (move: number) => {
   }
 };
 
+const availableMoves = Array('Paper', 'Scissor', 'Rock')
+
 const houseMove = () => {
   const move = availableMoves[availableMoves.length * Math.random() | 0]
   
   const createHousePick = () => {
     const button = document.createElement('button')
     const gameArea: HTMLElement | null = document.getElementById('game-area')
-    button.innerHTML = 'butao'
+    button.innerHTML = `${move}`
     
     gameArea?.appendChild(button)
   }
   
-  console.log(move)
   createHousePick()
 };
