@@ -54,11 +54,6 @@ header {
     border: 1px solid white;
 }
 
-header img {
-    width: 6rem;
-    height: auto;
-}
-
 #score {
     background-color: white;
     width: 50px;
