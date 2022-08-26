@@ -3,6 +3,7 @@ import './style.css'
 const paper = document.getElementById('paper') as HTMLButtonElement
 const scissor = document.getElementById('scissor') as HTMLButtonElement
 const rock = document.getElementById('rock') as HTMLButtonElement
+const gameArea: HTMLElement | null = document.querySelector('#game-area')
 
 paper.onclick = () => selectMove(0)
 scissor.onclick = () => selectMove(1)
@@ -32,17 +33,19 @@ const createPickScreen = (userMove: HTMLButtonElement,
   houseMove()
 };
 
-const availableMoves = Array('Paper', 'Scissor', 'Rock')
+const availableMoves = Array('paper', 'scissors', 'rock')
 
 const houseMove = () => {
   const move = availableMoves[availableMoves.length * Math.random() | 0]
+  const button = document.createElement('button')
   
-  const createHousePick = () => {
-    const button = document.createElement('button')
-    const gameArea: HTMLElement | null = document.getElementById('game-area')
-    button.innerHTML = `${move}`
-    gameArea?.appendChild(button)
+  gameArea?.appendChild(button)
+  
+  const createHouseMove = () => {
+    let src = `/images/icon-${move}.svg`
+    button.innerHTML += `<img src="${src}" alt="${move}" width="50" height="60">`
   }
   
-  createHousePick()
+  console.log(move)
+  setTimeout(createHouseMove, 1000)
 };
