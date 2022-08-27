@@ -40,8 +40,6 @@ body {
     width: 110px;
     align-self: center;
     border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
     border: 0;
 }
 
