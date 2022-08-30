@@ -2,10 +2,14 @@ import "./style.css";
 
 let userPick: number;
 let housePick: number;
+let score: number;
+
+score = 0;
 
 const availableMoves = Array(0, 1, 2);
 const body = document.querySelector("body");
 const winner = document.createElement("h1");
+const scoreboard = document.getElementById("score");
 
 interface AvailableMoves {
   paper: HTMLButtonElement;
@@ -86,6 +90,8 @@ const selectWinner = () => {
     winner.innerHTML = "DRAW";
     body?.appendChild(winner);
   } else if ((housePick + 1) % 3 === userPick) {
+    score++;
+    scoreboard!.innerHTML = `${score}`;
     winner.innerHTML = "YOU WIN";
     body?.appendChild(winner);
   } else {

@@ -64,7 +64,7 @@ header {
     border-radius: 5px;
 }
 
-#score {
+header div {
     background-color: white;
     border-radius: 5px;
     width: 65px;
@@ -72,7 +72,7 @@ header {
     text-align: center;
 }
 
-#score h6, h2 {
+header h6, h2 {
     margin: 0;
 }
 
