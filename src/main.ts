@@ -1,25 +1,33 @@
 import './style.css'
 
-const paper = document.getElementById('paper') as HTMLButtonElement
-const scissors = document.getElementById('scissors') as HTMLButtonElement
-const rock = document.getElementById('rock') as HTMLButtonElement
+interface AvailableMoves {
+  paper: HTMLButtonElement
+  scissors: HTMLButtonElement
+  rock: HTMLButtonElement
+}
+
+let moves: AvailableMoves = <AvailableMoves> {
+  paper: document.getElementById('paper'),
+  scissors: document.getElementById('scissors'),
+  rock: document.getElementById('rock')
+}
 
 const gameArea: HTMLElement | null = document.querySelector('#game-area')
 
-paper.onclick = () => selectMove(0)
-scissors.onclick = () => selectMove(1)
-rock.onclick = () => selectMove(2)
+moves.paper.onclick = () => selectMove(0, moves)
+moves.scissors.onclick = () => selectMove(1, moves)
+moves.rock.onclick = () => selectMove(2, moves)
 
-const selectMove = (move: number) => {
-  switch (move) {
+const selectMove = (select: number, moves: AvailableMoves) => {
+  switch (select) {
     case 0:
-      moveRevealScreen(paper, rock, scissors)
+      moveRevealScreen(moves.paper, moves.rock, moves.scissors)
       return
     case 1:
-      moveRevealScreen(scissors, paper, rock)
+      moveRevealScreen(moves.scissors, moves.paper, moves.rock)
       return
     case 2:
-      moveRevealScreen(rock, paper, scissors)
+      moveRevealScreen(moves.rock, moves.paper, moves.scissors)
       return
   }
 };
@@ -51,15 +59,24 @@ const displayHouseMove = () => {
 };
 
 const playAgain = () => {
-  const button = document.createElement("button")
+  const buttonPlayAgain = document.createElement("button")
   const body = document.querySelector("body")
-  button.innerHTML += "Play again"
-  body?.appendChild(button)
+  buttonPlayAgain.innerHTML += "Play again"
+  body?.appendChild(buttonPlayAgain)
 
-  button.onclick = () => resetDisplay()
+  buttonPlayAgain.onclick = () => clearDisplay(buttonPlayAgain, moves)
 }
 
-const resetDisplay = () => {
-  const game = document.querySelectorAll('#game-area > button')
-  game.forEach(el => el.remove())
+const clearDisplay = (buttonPlayAgain: HTMLButtonElement, moves: AvailableMoves) => {
+  moves.paper.style.display = ""
+  moves.rock.style.display = ""
+  moves.scissors.style.display = ""
+
+  const game = document.getElementById('game-area')
+
+  if (game?.hasChildNodes()) {
+    game.removeChild(game.children[3])
+  }
+  
+  buttonPlayAgain.remove()
 }
