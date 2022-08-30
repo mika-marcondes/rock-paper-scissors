@@ -17,6 +17,7 @@ moves.scissors.onclick = () => playerMove(1, moves);
 moves.rock.onclick = () => playerMove(2, moves);
 
 let userPick: number;
+let housePick: number;
 
 const playerMove = (pick: number, moves: AvailableMoves) => {
   switch (pick) {
@@ -39,12 +40,25 @@ const houseMove = () => {
   const gameArea: HTMLElement | null = document.querySelector("#game-area");
   const button = document.createElement("button");
 
-  const availableMoves = Array("paper", "scissors", "rock");
-  const housePick = availableMoves[(availableMoves.length * Math.random()) | 0];
+  const availableMoves = Array(0, 1, 2);
+  const randomMove =
+    availableMoves[(availableMoves.length * Math.random()) | 0];
 
   const showHouseMove = () => {
-    console.log(housePick);
-    button.setAttribute("id", `${housePick}`);
+    switch (randomMove) {
+      case 0:
+        housePick = 0;
+        button.setAttribute("id", "paper");
+        return;
+      case 1:
+        housePick = 1;
+        button.setAttribute("id", "scissors");
+        return;
+      case 2:
+        housePick = 2;
+        button.setAttribute("id", "rock");
+        return;
+    }
   };
 
   gameArea?.appendChild(button);
@@ -61,13 +75,13 @@ const showSelectedMove = (
   hideUnselected1.style.display = "none";
   hideUnselected2.style.display = "none";
   houseMove();
-  selectWinner();
+  setTimeout(selectWinner, 1500);
   setTimeout(playAgain, 1500);
 };
 
 const selectWinner = () => {
-  console.log(userPick);
-  // console.log(housePick);
+  console.log(`The player choose: ${userPick}`);
+  console.log(`The house choose: ${housePick}`);
 };
 
 const playAgain = () => {
