@@ -31,7 +31,6 @@ const createPickScreen = (userMove: HTMLButtonElement,
   hideMove1.remove()
   hideMove2.remove()
   houseMove()
-  playAgain()
 };
 
 const availableMoves = Array('paper', 'scissors', 'rock')
@@ -43,13 +42,9 @@ const houseMove = () => {
   gameArea?.appendChild(button)
   
   const createHouseMove = () => {
-    const src = `/images/icon-${housePick}.svg`
+    const src = `/icon-${housePick}.svg`
     button.innerHTML += `<img src="${src}" alt="${housePick}" width="50" height="60">`
   }
   
   setTimeout(createHouseMove, 1000)
 };
-
-const playAgain = () => {
-  document.querySelector('body')!.innerHTML += `<button>PLAY AGAIN</button>`
-}
