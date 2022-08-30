@@ -14,32 +14,28 @@ let moves: AvailableMoves = <AvailableMoves> {
 
 const gameArea: HTMLElement | null = document.querySelector('#game-area')
 
-moves.paper.onclick = () => selectMove(0, moves)
-moves.scissors.onclick = () => selectMove(1, moves)
-moves.rock.onclick = () => selectMove(2, moves)
-
 const selectMove = (select: number, moves: AvailableMoves) => {
   switch (select) {
     case 0:
-      moveRevealScreen(moves.paper, moves.rock, moves.scissors)
+      showSelection(moves.paper, moves.rock, moves.scissors)
       return
     case 1:
-      moveRevealScreen(moves.scissors, moves.paper, moves.rock)
+      showSelection(moves.scissors, moves.paper, moves.rock)
       return
     case 2:
-      moveRevealScreen(moves.rock, moves.paper, moves.scissors)
+      showSelection(moves.rock, moves.paper, moves.scissors)
       return
   }
 };
 
-const moveRevealScreen = (showMove: HTMLButtonElement,
-                          hideMove1: HTMLButtonElement,
-                          hideMove2: HTMLButtonElement,
+const showSelection = (showSelected: HTMLButtonElement,
+                          hideUnselected1: HTMLButtonElement,
+                          hideUnselected2: HTMLButtonElement,
 ) => {
-  showMove.onclick = null
-  showMove.style.display = ""
-  hideMove1.style.display = "none"
-  hideMove2.style.display = "none"
+  showSelected.onclick = null
+  showSelected.style.display = ""
+  hideUnselected1.style.display = "none"
+  hideUnselected2.style.display = "none"
   displayHouseMove()
   setTimeout(playAgain, 1500)
 };
@@ -66,19 +62,26 @@ const playAgain = () => {
   buttonPlayAgain.innerHTML += "Play again"
   body?.appendChild(buttonPlayAgain)
 
-  buttonPlayAgain.onclick = () => clearDisplay(buttonPlayAgain, moves)
+  buttonPlayAgain.onclick = () => resetDisplay(buttonPlayAgain, moves)
 }
 
-const clearDisplay = (buttonPlayAgain: HTMLButtonElement, moves: AvailableMoves) => {
+const resetDisplay = (buttonPlayAgain: HTMLButtonElement, moves: AvailableMoves) => {
   const game = document.getElementById('game-area')
 
   moves.paper.style.display = ""
   moves.rock.style.display = ""
   moves.scissors.style.display = ""
 
-  if (game?.hasChildNodes()) {
+  moves.paper.onclick = () => selectMove(0, moves)
+  moves.scissors.onclick = () => selectMove(1, moves)
+  moves.rock.onclick = () => selectMove(2, moves)
+
+  if (game?.hasChildNodes())
     game.removeChild(game.children[3])
-  }
   
   buttonPlayAgain.remove()
 }
+
+moves.paper.onclick = () => selectMove(0, moves)
+moves.scissors.onclick = () => selectMove(1, moves)
+moves.rock.onclick = () => selectMove(2, moves)
