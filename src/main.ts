@@ -12,39 +12,48 @@ rock.onclick = () => selectMove(2)
 const selectMove = (move: number) => {
   switch (move) {
     case 0:
-      createPickScreen(paper, rock, scissors)
+      displaySelectedMove(paper, rock, scissors)
       return
     case 1:
-      createPickScreen(scissors, paper, rock)
+      displaySelectedMove(scissors, paper, rock)
       return
     case 2:
-      createPickScreen(rock, paper, scissors)
+      displaySelectedMove(rock, paper, scissors)
       return
   }
 };
 
-const createPickScreen = (userMove: HTMLButtonElement,
+const displaySelectedMove = (userMove: HTMLButtonElement,
                           hideMove1: HTMLButtonElement,
                           hideMove2: HTMLButtonElement,
 ) => {
   userMove.onclick = null
-  hideMove1.remove()
-  hideMove2.remove()
-  houseMove()
+  hideMove1.style.display = "none"
+  hideMove2.style.display = "none"
+  displayHouseMove()
+  playAgain()
 };
 
 const availableMoves = Array('paper', 'scissors', 'rock')
 
-const houseMove = () => {
-  const housePick = availableMoves[availableMoves.length * Math.random() | 0]
+const displayHouseMove = () => {
   const button = document.createElement('button')
-  
+
   gameArea?.appendChild(button)
   
   const createHouseMove = () => {
+    const housePick = availableMoves[availableMoves.length * Math.random() | 0]
     const src = `/icon-${housePick}.svg`
+
     button.innerHTML += `<img src="${src}" alt="${housePick}" width="50" height="60">`
   }
   
   setTimeout(createHouseMove, 1000)
 };
+
+const playAgain = () => {
+  const button = document.createElement("button")
+  const body = document.querySelector("body")
+  button.innerHTML += "Play again"
+  body?.appendChild(button)
+}
