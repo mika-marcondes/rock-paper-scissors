@@ -62,3 +62,18 @@ header {
 #score h6, p {
     margin: 0;
 }
+
+#paper {
+    background: white url("public/icon-paper.svg") no-repeat center;
+    background-size: 50px;
+}
+
+#scissors {
+    background: white url("public/icon-scissors.svg") no-repeat center;
+    background-size: 50px;
+}
+
+#rock {
+    background: white url("public/icon-rock.svg") no-repeat center;
+    background-size: 50px;
+}
