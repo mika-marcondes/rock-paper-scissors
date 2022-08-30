@@ -1,5 +1,11 @@
 import "./style.css";
 
+let userPick: number;
+let housePick: number;
+
+const availableMoves = Array(0, 1, 2);
+const body = document.querySelector("body");
+
 interface AvailableMoves {
   paper: HTMLButtonElement;
   scissors: HTMLButtonElement;
@@ -15,9 +21,6 @@ const moves: AvailableMoves = <AvailableMoves>{
 moves.paper.onclick = () => playerMove(0, moves);
 moves.scissors.onclick = () => playerMove(1, moves);
 moves.rock.onclick = () => playerMove(2, moves);
-
-let userPick: number;
-let housePick: number;
 
 const playerMove = (pick: number, moves: AvailableMoves) => {
   switch (pick) {
@@ -39,8 +42,6 @@ const playerMove = (pick: number, moves: AvailableMoves) => {
 const houseMove = () => {
   const gameArea: HTMLElement | null = document.querySelector("#game-area");
   const button = document.createElement("button");
-
-  const availableMoves = Array(0, 1, 2);
   const randomMove =
     availableMoves[(availableMoves.length * Math.random()) | 0];
 
@@ -86,7 +87,6 @@ const selectWinner = () => {
 
 const playAgain = () => {
   const buttonPlayAgain = document.createElement("button");
-  const body = document.querySelector("body");
 
   buttonPlayAgain.innerHTML += "Play again";
   body?.appendChild(buttonPlayAgain);
