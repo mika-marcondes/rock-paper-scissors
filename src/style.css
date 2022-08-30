@@ -41,11 +41,10 @@ body button {
 
 #game-area button {
     margin: 0 20px 0 20px;
-    height: 110px;
-    width: 110px;
+    height: 100px;
+    width: 100px;
     align-self: center;
     border-radius: 50%;
-    border: 0;
 }
 
 header {
@@ -68,21 +67,21 @@ header {
     text-align: center;
 }
 
-#score h6, p {
+#score h6, h2 {
     margin: 0;
 }
 
 #paper {
     background: white url("public/icon-paper.svg") no-repeat center;
-    background-size: 50px;
+    background-size: 40px;
 }
 
 #scissors {
     background: white url("public/icon-scissors.svg") no-repeat center;
-    background-size: 50px;
+    background-size: 40px;
 }
 
 #rock {
     background: white url("public/icon-rock.svg") no-repeat center;
-    background-size: 50px;
+    background-size: 40px;
 }

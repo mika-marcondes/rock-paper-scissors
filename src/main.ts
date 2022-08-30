@@ -6,16 +6,18 @@ interface AvailableMoves {
   rock: HTMLButtonElement;
 }
 
-let moves: AvailableMoves = <AvailableMoves>{
+const moves: AvailableMoves = <AvailableMoves>{
   paper: document.getElementById("paper"),
   scissors: document.getElementById("scissors"),
   rock: document.getElementById("rock"),
 };
 
-const gameArea: HTMLElement | null = document.querySelector("#game-area");
+moves.paper.onclick = () => selectMove(0, moves);
+moves.scissors.onclick = () => selectMove(1, moves);
+moves.rock.onclick = () => selectMove(2, moves);
 
-const selectMove = (select: number, moves: AvailableMoves) => {
-  switch (select) {
+const selectMove = (pick: number, moves: AvailableMoves) => {
+  switch (pick) {
     case 0:
       showSelection(moves.paper, moves.rock, moves.scissors);
       return;
@@ -37,24 +39,22 @@ const showSelection = (
   showSelected.style.display = "";
   hideUnselected1.style.display = "none";
   hideUnselected2.style.display = "none";
-  displayHouseMove();
+  houseMove();
   setTimeout(playAgain, 1500);
 };
 
-const displayHouseMove = () => {
+const houseMove = () => {
+  const gameArea: HTMLElement | null = document.querySelector("#game-area");
+  const availableMoves = Array("paper", "scissors", "rock");
+  const housePick = availableMoves[(availableMoves.length * Math.random()) | 0];
   const button = document.createElement("button");
 
-  gameArea?.appendChild(button);
-
-  const createHouseMove = () => {
-    const availableMoves = Array("paper", "scissors", "rock");
-    const housePick =
-      availableMoves[(availableMoves.length * Math.random()) | 0];
-
+  const showHouseMove = () => {
     button.setAttribute("id", `${housePick}`);
   };
 
-  setTimeout(createHouseMove, 1000);
+  gameArea?.appendChild(button);
+  setTimeout(showHouseMove, 1000);
 };
 
 const playAgain = () => {
@@ -85,7 +85,3 @@ const resetDisplay = (
 
   buttonPlayAgain.remove();
 };
-
-moves.paper.onclick = () => selectMove(0, moves);
-moves.scissors.onclick = () => selectMove(1, moves);
-moves.rock.onclick = () => selectMove(2, moves);
