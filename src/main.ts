@@ -52,6 +52,7 @@ const displayHouseMove = () => {
   const createHouseMove = () => {
     const availableMoves = Array('paper', 'scissors', 'rock')
     const housePick = availableMoves[availableMoves.length * Math.random() | 0]
+
     button.setAttribute("id", `${housePick}`)
   }
   
@@ -61,6 +62,7 @@ const displayHouseMove = () => {
 const playAgain = () => {
   const buttonPlayAgain = document.createElement("button")
   const body = document.querySelector("body")
+
   buttonPlayAgain.innerHTML += "Play again"
   body?.appendChild(buttonPlayAgain)
 
@@ -68,11 +70,11 @@ const playAgain = () => {
 }
 
 const clearDisplay = (buttonPlayAgain: HTMLButtonElement, moves: AvailableMoves) => {
+  const game = document.getElementById('game-area')
+
   moves.paper.style.display = ""
   moves.rock.style.display = ""
   moves.scissors.style.display = ""
-
-  const game = document.getElementById('game-area')
 
   if (game?.hasChildNodes()) {
     game.removeChild(game.children[3])
