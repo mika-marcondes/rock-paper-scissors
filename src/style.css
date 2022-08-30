@@ -30,13 +30,18 @@ body button {
     width: 150px;
 }
 
+body h1 {
+    margin: 0 0 20px 0;
+    color: white;
+}
+
 #game-area {
     display: flex;
     flex-flow: row wrap;
     align-self: center;
     justify-content: center;
     width: 320px;
-    height: 18rem;
+    height: 14rem;
 }
 
 #game-area button {

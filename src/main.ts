@@ -5,6 +5,7 @@ let housePick: number;
 
 const availableMoves = Array(0, 1, 2);
 const body = document.querySelector("body");
+const winner = document.createElement("h1");
 
 interface AvailableMoves {
   paper: HTMLButtonElement;
@@ -81,8 +82,16 @@ const showSelectedMove = (
 };
 
 const selectWinner = () => {
-  console.log(`The player choose: ${userPick}`);
-  console.log(`The house choose: ${housePick}`);
+  if (userPick === housePick) {
+    winner.innerHTML = "DRAW";
+    body?.appendChild(winner);
+  } else if ((housePick + 1) % 3 === userPick) {
+    winner.innerHTML = "YOU WIN";
+    body?.appendChild(winner);
+  } else {
+    winner.innerHTML = "YOU LOSE";
+    body?.appendChild(winner);
+  }
 };
 
 const playAgain = () => {
@@ -111,4 +120,5 @@ const resetDisplay = (
   if (game?.hasChildNodes()) game.removeChild(game.children[3]);
 
   buttonPlayAgain.remove();
+  winner.remove();
 };
