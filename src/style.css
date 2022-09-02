@@ -106,3 +106,16 @@ header h6, h2 {
     background: white url("public/icon-rock.svg") no-repeat center;
     background-size: 40px;
 }
+
+#show-rules {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: white url("public/image-rules.svg") no-repeat center;
+}
+
+#show-rules p {
+    font-weight: 700;
+    font-size: x-large;
+    text-align: center;
+}

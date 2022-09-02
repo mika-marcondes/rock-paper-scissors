@@ -10,6 +10,7 @@ const availableMoves = Array(0, 1, 2);
 const body = document.querySelector("body");
 const winner = document.createElement("h1");
 const scoreboard = document.getElementById("score");
+const rules = document.getElementById("rules") as HTMLButtonElement;
 
 interface AvailableMoves {
   paper: HTMLButtonElement;
@@ -26,6 +27,16 @@ const moves: AvailableMoves = <AvailableMoves>{
 moves.paper.onclick = () => playerMove(0, moves);
 moves.scissors.onclick = () => playerMove(1, moves);
 moves.rock.onclick = () => playerMove(2, moves);
+
+rules.onclick = () => showRules();
+
+const showRules = () => {
+  const rules = document.createElement("div");
+
+  rules.setAttribute("id", "show-rules");
+  rules.innerHTML += "<p>RULES</p>";
+  body!.appendChild(rules);
+};
 
 const playerMove = (pick: number, moves: AvailableMoves) => {
   switch (pick) {
