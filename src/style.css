@@ -115,7 +115,16 @@ header h6, h2 {
 }
 
 #show-rules p {
+    margin: 5rem 0 0 0;
     font-weight: 700;
-    font-size: x-large;
+    font-size: xx-large;
     text-align: center;
+}
+
+#show-rules img {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }

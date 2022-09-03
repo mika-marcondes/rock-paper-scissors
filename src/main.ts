@@ -35,6 +35,7 @@ const showRules = () => {
 
   rules.setAttribute("id", "show-rules");
   rules.innerHTML += "<p>RULES</p>";
+  rules.innerHTML += "<img src='../public/icon-close.svg' alt='Close'>";
   body!.appendChild(rules);
 };
 
