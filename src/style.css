@@ -44,14 +44,6 @@ body h1 {
     height: 14rem;
 }
 
-#game-area button {
-    margin: 0 20px 0 20px;
-    height: 100px;
-    width: 100px;
-    align-self: center;
-    border-radius: 50%;
-}
-
 header {
     margin: 2rem 0 4rem 0;
     padding: 10px;
@@ -92,6 +84,14 @@ header h6, h2 {
     font-weight: 600;
 }
 
+#game-area button {
+    margin: 0 20px 0 20px;
+    height: 90px;
+    width: 90px;
+    align-self: center;
+    border-radius: 50%;
+}
+
 #paper {
     background: white url("public/icon-paper.svg") no-repeat center;
     background-size: 40px;
@@ -119,12 +119,16 @@ header h6, h2 {
     font-weight: 700;
     font-size: xx-large;
     text-align: center;
+    color: hsl(229, 25%, 31%);
 }
 
-#show-rules img {
+#show-rules button {
+    width: 50px;
+    height: 50px;
     position: absolute;
     bottom: 50px;
     left: 0;
     right: 0;
     margin: 0 auto;
+    background: url("public/icon-close.svg") no-repeat center;
 }

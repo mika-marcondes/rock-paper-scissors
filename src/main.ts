@@ -1,16 +1,16 @@
 import "./style.css";
 
+const availableMoves = Array(0, 1, 2);
+const winner = document.createElement("h1");
+const body = document.querySelector("body") as HTMLBodyElement;
+const scoreboard = document.getElementById("score") as HTMLHeadingElement;
+const rules = document.getElementById("rules") as HTMLButtonElement;
+
 let userPick: number;
 let housePick: number;
 let score: number;
 
 score = 0;
-
-const availableMoves = Array(0, 1, 2);
-const body = document.querySelector("body");
-const winner = document.createElement("h1");
-const scoreboard = document.getElementById("score");
-const rules = document.getElementById("rules") as HTMLButtonElement;
 
 interface AvailableMoves {
   paper: HTMLButtonElement;
@@ -35,8 +35,11 @@ const showRules = () => {
 
   rules.setAttribute("id", "show-rules");
   rules.innerHTML += "<p>RULES</p>";
-  rules.innerHTML += "<img src='../public/icon-close.svg' alt='Close'>";
+  rules.innerHTML += "<button id='close'></button>";
   body!.appendChild(rules);
+
+  const closeButton = document.getElementById("close") as HTMLButtonElement;
+  closeButton.onclick = () => rules.remove();
 };
 
 const playerMove = (pick: number, moves: AvailableMoves) => {
