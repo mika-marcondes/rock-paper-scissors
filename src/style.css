@@ -38,10 +38,10 @@ body h1 {
 #game-area {
     display: flex;
     flex-flow: row wrap;
-    align-self: center;
     justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 14rem;
+    height: 18rem;
 }
 
 header {
@@ -85,8 +85,8 @@ header h6, h2 {
 }
 
 #game-area button {
-    height: 90px;
-    width: 90px;
+    height: 92px;
+    width: 92px;
     border-radius: 50%;
 }
 
@@ -131,6 +131,20 @@ header h6, h2 {
 #rock {
     background: white url("public/icon-rock.svg") no-repeat center;
     background-size: 40px;
+    border-top: 5px solid hsla(0, 0%, 50%, 40%);
+}
+
+.rock {
+    margin: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-bottom: 5px solid hsl(346, 74%, 35%);
+    background: linear-gradient(0deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
+    box-shadow: hsla(240, 29%, 15%, 40%) 0 4px 10px;
 }
 
 #show-rules {
