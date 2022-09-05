@@ -1,9 +1,9 @@
 import "./style.css";
 import "./moves.css";
 
-const availableMoves = Array(0, 1, 2);
 const winner = document.createElement("h1");
 const body = document.querySelector("body") as HTMLBodyElement;
+const gameArea = document.querySelector("#game-area") as HTMLElement;
 const scoreboard = document.getElementById("score") as HTMLHeadingElement;
 const rules = document.getElementById("rules") as HTMLButtonElement;
 
@@ -13,16 +13,26 @@ let score: number;
 
 score = 0;
 
-interface AvailableMoves {
+interface AvailableMoves extends MovesContainer {
   paper: HTMLButtonElement;
   scissors: HTMLButtonElement;
   rock: HTMLButtonElement;
+}
+
+interface MovesContainer {
+  paperCont: HTMLDivElement;
+  scissorsCont: HTMLDivElement;
+  rockCont: HTMLDivElement;
 }
 
 const moves: AvailableMoves = <AvailableMoves>{
   paper: document.getElementById("paper"),
   scissors: document.getElementById("scissors"),
   rock: document.getElementById("rock"),
+
+  paperCont: document.getElementById("paper-container"),
+  scissorsCont: document.getElementById("scissors-container"),
+  rockCont: document.getElementById("rock-container"),
 };
 
 moves.paper.onclick = () => playerMove(0, moves);
@@ -43,25 +53,28 @@ const showRules = () => {
   closeButton.onclick = () => rules.remove();
 };
 
-const playerMove = (pick: number, moves: AvailableMoves) => {
+const playerMove = (pick: number, moves: MovesContainer) => {
   switch (pick) {
     case 0:
       userPick = 0;
-      showSelectedMove(moves.paper, moves.rock, moves.scissors);
+      hideUnselectedMoves(moves.paperCont, moves.scissorsCont, moves.rockCont);
+      houseMove();
       return;
     case 1:
       userPick = 1;
-      showSelectedMove(moves.scissors, moves.paper, moves.rock);
+      hideUnselectedMoves(moves.scissorsCont, moves.paperCont, moves.rockCont);
+      houseMove();
       return;
     case 2:
       userPick = 2;
-      showSelectedMove(moves.rock, moves.paper, moves.scissors);
+      hideUnselectedMoves(moves.rockCont, moves.paperCont, moves.scissorsCont);
+      houseMove();
       return;
   }
 };
 
 const houseMove = () => {
-  const gameArea: HTMLElement | null = document.querySelector("#game-area");
+  const availableMoves = Array(0, 1, 2);
   const button = document.createElement("button");
   const randomMove =
     availableMoves[(availableMoves.length * Math.random()) | 0];
@@ -85,20 +98,19 @@ const houseMove = () => {
 
   gameArea?.appendChild(button);
   setTimeout(showHouseMove, 1000);
+  setTimeout(selectWinner, 1500);
+  setTimeout(playAgain, 1500);
 };
 
-const showSelectedMove = (
-  playerSelection: HTMLButtonElement,
-  hideUnselected1: HTMLButtonElement,
-  hideUnselected2: HTMLButtonElement
+const hideUnselectedMoves = (
+  playerSelection: HTMLDivElement,
+  hideUnselected1: HTMLDivElement,
+  hideUnselected2: HTMLDivElement
 ) => {
   playerSelection.onclick = null;
   playerSelection.style.display = "";
   hideUnselected1.style.display = "none";
   hideUnselected2.style.display = "none";
-  houseMove();
-  setTimeout(selectWinner, 1500);
-  setTimeout(playAgain, 1500);
 };
 
 const selectWinner = () => {
@@ -131,9 +143,9 @@ const resetDisplay = (
 ) => {
   const game = document.getElementById("game-area");
 
-  moves.paper.style.display = "";
-  moves.rock.style.display = "";
-  moves.scissors.style.display = "";
+  moves.paperCont.style.display = "";
+  moves.rockCont.style.display = "";
+  moves.scissorsCont.style.display = "";
 
   moves.paper.onclick = () => playerMove(0, moves);
   moves.scissors.onclick = () => playerMove(1, moves);
