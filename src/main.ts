@@ -1,4 +1,5 @@
 import "./style.css";
+import "./moves.css";
 
 const availableMoves = Array(0, 1, 2);
 const winner = document.createElement("h1");

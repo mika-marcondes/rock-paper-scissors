@@ -1,0 +1,56 @@
+#paper {
+    background: white url("public/icon-paper.svg") no-repeat center;
+    background-size: 40px;
+    border-top: 5px solid hsla(0, 0%, 50%, 40%);
+}
+
+.paper {
+    margin: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-bottom: 5px solid hsl(230, 60%, 45%);
+    background: linear-gradient(0deg, hsl(230, 89%, 62%) 0%, hsl(230, 89%, 65%) 100%);
+    box-shadow: hsla(240, 29%, 15%, 40%) 0 4px 10px;
+}
+
+#scissors {
+    background: white url("public/icon-scissors.svg") no-repeat center;
+    background-size: 40px;
+    border-top: 5px solid hsla(0, 0%, 50%, 40%);
+}
+
+.scissors {
+    margin: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-bottom: 5px solid hsl(29, 75%, 43%);
+    background: linear-gradient(0deg, hsl(39, 89%, 49%) 0%, hsl(40, 84%, 53%) 100%);
+    box-shadow: hsla(240, 29%, 15%, 40%) 0 4px 10px;
+}
+
+#rock {
+    background: white url("public/icon-rock.svg") no-repeat center;
+    background-size: 40px;
+    border-top: 5px solid hsla(0, 0%, 50%, 40%);
+}
+
+.rock {
+    margin: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-bottom: 5px solid hsl(346, 74%, 35%);
+    background: linear-gradient(0deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
+    box-shadow: hsla(240, 29%, 15%, 40%) 0 4px 10px;
+}
