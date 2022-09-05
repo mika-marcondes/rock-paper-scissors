@@ -5,7 +5,7 @@
 }
 
 #paper-container {
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
 }
 
 #scissors-container {
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@
 }
 
 #rock-container {
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
