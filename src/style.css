@@ -66,6 +66,8 @@ header h6, h2 {
     align-items: center;
     width: 320px;
     height: 18rem;
+    background: url("public/bg-triangle.svg") no-repeat center;
+    background-size: 54%;
 }
 
 #game-area button {
@@ -80,7 +82,7 @@ header h6, h2 {
     width: 110px;
     height: 40px;
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid hsl(217, 16%, 45%);
     border-radius: 8px;
 }
 

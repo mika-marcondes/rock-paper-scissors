@@ -1,7 +1,7 @@
 import "./style.css";
 import "./moves.css";
 
-const winner = document.createElement("h1");
+const winner = document.createElement("h1") as HTMLHeadingElement;
 const body = document.querySelector("body") as HTMLBodyElement;
 const gameArea = document.querySelector("#game-area") as HTMLElement;
 const scoreboard = document.getElementById("score") as HTMLHeadingElement;
@@ -96,7 +96,7 @@ const houseMove = () => {
     }
   };
 
-  gameArea?.appendChild(button);
+  gameArea.appendChild(button);
   setTimeout(showHouseMove, 1000);
   setTimeout(selectWinner, 1500);
   setTimeout(playAgain, 1500);
@@ -111,20 +111,21 @@ const hideUnselectedMoves = (
   playerSelection.style.display = "";
   hideUnselected1.style.display = "none";
   hideUnselected2.style.display = "none";
+  gameArea.style.background = "none";
 };
 
 const selectWinner = () => {
   if (userPick === housePick) {
     winner.innerHTML = "DRAW";
-    body?.appendChild(winner);
+    body.appendChild(winner);
   } else if ((housePick + 1) % 3 === userPick) {
     score++;
     scoreboard!.innerHTML = `${score}`;
     winner.innerHTML = "YOU WIN";
-    body?.appendChild(winner);
+    body.appendChild(winner);
   } else {
     winner.innerHTML = "YOU LOSE";
-    body?.appendChild(winner);
+    body.appendChild(winner);
   }
 };
 
@@ -132,7 +133,7 @@ const playAgain = () => {
   const buttonPlayAgain = document.createElement("button");
 
   buttonPlayAgain.innerHTML += "Play again";
-  body?.appendChild(buttonPlayAgain);
+  body.appendChild(buttonPlayAgain);
 
   buttonPlayAgain.onclick = () => resetDisplay(buttonPlayAgain, moves);
 };
@@ -141,17 +142,18 @@ const resetDisplay = (
   buttonPlayAgain: HTMLButtonElement,
   moves: AvailableMoves
 ) => {
-  const game = document.getElementById("game-area");
+  const game = document.getElementById("game-area") as HTMLElement;
 
   moves.paperCont.style.display = "";
   moves.rockCont.style.display = "";
   moves.scissorsCont.style.display = "";
+  gameArea.style.background = "";
 
   moves.paper.onclick = () => playerMove(0, moves);
   moves.scissors.onclick = () => playerMove(1, moves);
   moves.rock.onclick = () => playerMove(2, moves);
 
-  if (game?.hasChildNodes()) game.removeChild(game.children[3]);
+  if (game.hasChildNodes()) game.removeChild(game.children[3]);
 
   buttonPlayAgain.remove();
   winner.remove();
