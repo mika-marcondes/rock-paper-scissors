@@ -24,15 +24,18 @@ body {
 }
 
 body button {
+    font-family: 'Barlow Semi Condensed', sans-serif;
     border: 0;
     border-radius: 5px;
     height: 40px;
-    width: 150px;
+    width: 160px;
+    color: hsl(229, 25%, 31%);
 }
 
 body h1 {
-    margin: 0 0 20px 0;
+    margin: 30px 0;
     color: white;
+    font-size: 2.6rem;
 }
 
 header {

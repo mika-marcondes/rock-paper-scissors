@@ -87,16 +87,19 @@ const houseMove = () => {
     switch (randomMove) {
       case 0:
         housePick = 0;
+        // @ts-ignore
         button.removeAttribute("id", "wait");
         div.setAttribute("id", "paper-container");
         return;
       case 1:
         housePick = 1;
+        // @ts-ignore
         button.removeAttribute("id", "wait");
         div.setAttribute("id", "scissors-container");
         return;
       case 2:
         housePick = 2;
+        // @ts-ignore
         button.removeAttribute("id", "wait");
         div.setAttribute("id", "rock-container");
         return;
@@ -141,7 +144,7 @@ const selectWinner = () => {
 const playAgain = () => {
   const buttonPlayAgain = document.createElement("button");
 
-  buttonPlayAgain.innerHTML += "Play again";
+  buttonPlayAgain.innerHTML += "PLAY AGAIN";
   body.appendChild(buttonPlayAgain);
 
   buttonPlayAgain.onclick = () => resetDisplay(buttonPlayAgain, moves);
