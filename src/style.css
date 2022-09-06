@@ -118,3 +118,8 @@ header h6, h2 {
     margin: 0 auto;
     background: url("public/icon-close.svg") no-repeat center;
 }
+
+#wait {
+    margin: 35px;
+    background-color: #1a2945;
+}

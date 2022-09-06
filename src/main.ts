@@ -75,6 +75,7 @@ const playerMove = (pick: number, moves: MovesContainer) => {
 
 const houseMove = () => {
   const availableMoves = Array(0, 1, 2);
+  const div = document.createElement("div");
   const button = document.createElement("button");
   const randomMove =
     availableMoves[(availableMoves.length * Math.random()) | 0];
@@ -83,20 +84,25 @@ const houseMove = () => {
     switch (randomMove) {
       case 0:
         housePick = 0;
-        button.setAttribute("id", "paper");
+        button.removeAttribute("id", "wait");
+        div.setAttribute("id", "paper-container");
         return;
       case 1:
         housePick = 1;
-        button.setAttribute("id", "scissors");
+        button.removeAttribute("id", "wait");
+        div.setAttribute("id", "scissors-container");
         return;
       case 2:
         housePick = 2;
-        button.setAttribute("id", "rock");
+        button.removeAttribute("id", "wait");
+        div.setAttribute("id", "rock-container");
         return;
     }
   };
 
-  gameArea.appendChild(button);
+  gameArea.appendChild(div);
+  div.appendChild(button);
+  button.setAttribute("id", "wait");
   setTimeout(showHouseMove, 1000);
   setTimeout(selectWinner, 1500);
   setTimeout(playAgain, 1500);
