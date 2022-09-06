@@ -58,16 +58,19 @@ const playerMove = (pick: number, moves: MovesContainer) => {
     case 0:
       userPick = 0;
       hideUnselectedMoves(moves.paperCont, moves.scissorsCont, moves.rockCont);
+      gameArea.style.height = "170px";
       houseMove();
       return;
     case 1:
       userPick = 1;
       hideUnselectedMoves(moves.scissorsCont, moves.paperCont, moves.rockCont);
+      gameArea.style.height = "170px";
       houseMove();
       return;
     case 2:
       userPick = 2;
       hideUnselectedMoves(moves.rockCont, moves.paperCont, moves.scissorsCont);
+      gameArea.style.height = "170px";
       houseMove();
       return;
   }
@@ -154,6 +157,7 @@ const resetDisplay = (
   moves.rockCont.style.display = "";
   moves.scissorsCont.style.display = "";
   gameArea.style.background = "";
+  gameArea.style.height = "290px";
 
   moves.paper.onclick = () => playerMove(0, moves);
   moves.scissors.onclick = () => playerMove(1, moves);

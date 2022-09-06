@@ -60,21 +60,27 @@ header h6, h2 {
 }
 
 #game-area {
+    padding: 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     width: 320px;
-    height: 18rem;
+    height: 290px;
     background: url("public/bg-triangle.svg") no-repeat center;
-    background-size: 60%;
-    background-position-y: 60px;
+    background-size: 54%;
+    background-position-y: 70px;
 }
 
 #game-area button {
     height: 90px;
     width: 90px;
     border-radius: 50%;
+}
+
+#pick {
+    position: absolute;
+    color: white;
 }
 
 #rules {
