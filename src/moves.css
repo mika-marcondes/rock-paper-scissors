@@ -1,5 +1,5 @@
 #paper {
-    background: white url("public/icon-paper.svg") no-repeat center;
+    background: white url("/icon-paper.svg") no-repeat center;
     background-size: 40px;
     border-top: 5px solid hsla(0, 0%, 50%, 40%);
 }
@@ -18,7 +18,7 @@
 }
 
 #scissors {
-    background: white url("public/icon-scissors.svg") no-repeat center;
+    background: white url("/icon-scissors.svg") no-repeat center;
     background-size: 40px;
     border-top: 5px solid hsla(0, 0%, 50%, 40%);
 }
@@ -37,7 +37,7 @@
 }
 
 #rock {
-    background: white url("public/icon-rock.svg") no-repeat center;
+    background: white url("/icon-rock.svg") no-repeat center;
     background-size: 40px;
     border-top: 5px solid hsla(0, 0%, 50%, 40%);
 }

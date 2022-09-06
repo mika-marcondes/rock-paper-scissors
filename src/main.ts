@@ -97,18 +97,21 @@ const houseMove = () => {
         // @ts-ignore
         button.removeAttribute("id", "wait");
         div.setAttribute("id", "paper-container");
+        button.setAttribute("id", "paper");
         return;
       case 1:
         housePick = 1;
         // @ts-ignore
         button.removeAttribute("id", "wait");
         div.setAttribute("id", "scissors-container");
+        button.setAttribute("id", "scissors");
         return;
       case 2:
         housePick = 2;
         // @ts-ignore
         button.removeAttribute("id", "wait");
         div.setAttribute("id", "rock-container");
+        button.setAttribute("id", "rock");
         return;
     }
   };

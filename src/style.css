@@ -75,7 +75,7 @@ header h6, h2 {
     align-items: center;
     width: 375px;
     height: 290px;
-    background: url("public/bg-triangle.svg") no-repeat center;
+    background: url("/bg-triangle.svg") no-repeat center;
     background-size: 54%;
     background-position-y: 60px;
 }
@@ -111,7 +111,7 @@ header h6, h2 {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background: white url("public/image-rules.svg") no-repeat center;
+    background: white url("/image-rules.svg") no-repeat center;
 }
 
 #show-rules p {
@@ -130,7 +130,7 @@ header h6, h2 {
     left: 0;
     right: 0;
     margin: 0 auto;
-    background: url("public/icon-close.svg") no-repeat center;
+    background: url("/icon-close.svg") no-repeat center;
 }
 
 #wait {
