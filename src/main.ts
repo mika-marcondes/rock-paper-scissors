@@ -143,6 +143,7 @@ const selectWinner = () => {
 
 const playAgain = () => {
   const buttonPlayAgain = document.createElement("button");
+  buttonPlayAgain.setAttribute("id", "play-again");
 
   buttonPlayAgain.innerHTML += "PLAY AGAIN";
   body.appendChild(buttonPlayAgain);
