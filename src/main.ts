@@ -35,9 +35,9 @@ const moves: AvailableMoves = <AvailableMoves>{
   rockCont: document.getElementById("rock-container"),
 };
 
-moves.paper.onclick = () => playerMove(0, moves);
-moves.scissors.onclick = () => playerMove(1, moves);
-moves.rock.onclick = () => playerMove(2, moves);
+moves.paper.onclick = () => playerMove(0, moves, moves);
+moves.scissors.onclick = () => playerMove(1, moves, moves);
+moves.rock.onclick = () => playerMove(2, moves, moves);
 
 rules.onclick = () => showRules();
 
@@ -53,22 +53,29 @@ const showRules = () => {
   closeButton.onclick = () => rules.remove();
 };
 
-const playerMove = (pick: number, moves: MovesContainer) => {
+const playerMove = (
+  pick: number,
+  moves: MovesContainer,
+  button: AvailableMoves
+) => {
   switch (pick) {
     case 0:
       userPick = 0;
+      button.paper.disabled = true;
       hideUnselectedMoves(moves.paperCont, moves.scissorsCont, moves.rockCont);
       gameArea.style.height = "170px";
       houseMove();
       return;
     case 1:
       userPick = 1;
+      button.scissors.disabled = true;
       hideUnselectedMoves(moves.scissorsCont, moves.paperCont, moves.rockCont);
       gameArea.style.height = "170px";
       houseMove();
       return;
     case 2:
       userPick = 2;
+      button.rock.disabled = true;
       hideUnselectedMoves(moves.rockCont, moves.paperCont, moves.scissorsCont);
       gameArea.style.height = "170px";
       houseMove();
@@ -160,12 +167,17 @@ const resetDisplay = (
   moves.paperCont.style.display = "";
   moves.rockCont.style.display = "";
   moves.scissorsCont.style.display = "";
+
   gameArea.style.background = "";
   gameArea.style.height = "290px";
 
-  moves.paper.onclick = () => playerMove(0, moves);
-  moves.scissors.onclick = () => playerMove(1, moves);
-  moves.rock.onclick = () => playerMove(2, moves);
+  moves.paper.disabled = false;
+  moves.scissors.disabled = false;
+  moves.rock.disabled = false;
+
+  moves.paper.onclick = () => playerMove(0, moves, moves);
+  moves.scissors.onclick = () => playerMove(1, moves, moves);
+  moves.rock.onclick = () => playerMove(2, moves, moves);
 
   if (game.hasChildNodes()) game.removeChild(game.children[3]);
 
