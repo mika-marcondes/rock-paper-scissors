@@ -56,6 +56,15 @@ header {
     border-radius: 5px;
 }
 
+#userPick {
+    display: flex;
+    position: absolute;
+    top: 22rem;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+}
+
 header div {
     background-color: white;
     border-radius: 5px;

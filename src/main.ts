@@ -64,6 +64,7 @@ const playerMove = (
       button.paper.disabled = true;
       hideUnselectedMoves(moves.paperCont, moves.scissorsCont, moves.rockCont);
       gameArea.style.height = "170px";
+      moves.paperCont.innerHTML += "<h2 id='userPick'>YOU PICKED</h2>";
       houseMove();
       return;
     case 1:
@@ -87,6 +88,7 @@ const houseMove = () => {
   const availableMoves = Array(0, 1, 2);
   const div = document.createElement("div");
   const button = document.createElement("button");
+
   const randomMove =
     availableMoves[(availableMoves.length * Math.random()) | 0];
 
